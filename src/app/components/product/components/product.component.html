@@ -1,0 +1,10 @@
+<div class="product-grid">
+    <div *ngFor="let product of products">
+        <H3 appHighlight>{{product.title | uppercase}}</H3>
+        <img [src]="product.image" alt="">
+        <strong>{{product.price | currency:'PEN':'code'}}</strong>
+        <p>{{product.description | slice:0:10}}</p>
+        <button (click)="addCart()">Agregar al Carrito</button>
+        <a [routerLink]="['/products', product.id]">ver detalles</a>
+    </div>
+</div>
